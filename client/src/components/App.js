@@ -2,8 +2,9 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchImages } from "../redux/actions";
+import ImageGrid from "./ImageGrid";
 
-function App({ images, loading, error, fetchImages }) {
+function App({ loading, error, fetchImages }) {
   useEffect(() => {
     fetchImages();
   }, [fetchImages]);
@@ -14,18 +15,12 @@ function App({ images, loading, error, fetchImages }) {
   return (
     <div>
       <h1>Pixabay Image Gallery</h1>
-      {images.map((image) => (
-        <div key={image.id}>
-          <img src={image.previewURL} alt={image.tags} />
-          <p>{image.user}</p>
-        </div>
-      ))}
+      <ImageGrid />
     </div>
   );
 }
 
 const mapStateToProps = (state) => ({
-  images: state.images.images,
   loading: state.images.loading,
   error: state.images.error,
 });
