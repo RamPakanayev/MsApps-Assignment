@@ -19,3 +19,69 @@
   align-items: center;
   height: 100%;
 }
+button {
+  background-color: #444;
+  color: #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  width: 150px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+button:hover {
+  filter: brightness(150%);
+}
+button:active {
+  filter: brightness(70%);
+}
+
+.prev-button,
+.next-button {
+  font-size: 20px;
+}
+
+.prev-button span,
+.next-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.next-button span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  transition: 0.5s;
+}
+.prev-button span:after {
+  content: "\00ab"; /* change to '\00ab' for the left double arrow */
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -20px; /* change to 'left' and set it to '-20px' */
+  transition: 0.5s;
+}
+
+.prev-button:hover span {
+  padding-left: 25px; /* padding-right for NextButton and padding-left for PrevButton */
+}
+
+.next-button:hover span {
+  padding-right: 25px;
+}
+.next-button:hover span {
+  padding-right: 25px;
+}
+.prev-button:hover span:after {
+  opacity: 1;
+  left: 0; /* right for NextButton and left for PrevButton */
+}
+
+.next-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
