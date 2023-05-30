@@ -25,6 +25,7 @@ export const fetchImagesFail = (error) => ({
   payload: error,
 });
 
+// client\src\redux\actions\index.js
 export const fetchImages = (category, page) => {
   return (dispatch) => {
     dispatch(fetchImagesStart());
@@ -32,7 +33,13 @@ export const fetchImages = (category, page) => {
     fetchImagesApi(category, page)
       .then((res) => res.json())
       .then((data) => {
-        dispatch(fetchImagesSuccess(data));  // Pass the full data array to fetchImagesSuccess
+        if (data && data.length > 0) {
+          dispatch(fetchImagesSuccess(data));
+        } else {
+          dispatch(
+            fetchImagesFail(new Error("No images found for this category."))
+          );
+        }
       })
       .catch((error) => {
         dispatch(fetchImagesFail(error));

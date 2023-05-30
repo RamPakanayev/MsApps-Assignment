@@ -6,9 +6,10 @@ import ImageGrid from "./ImageGrid";
 import NextButton from "./NextButton";
 import PrevButton from "./PrevButton";
 import CategoryModal from "./CategoryModal";
+import ErrorDisplay from "./ErrorDisplay";
 
 function App({ images, error, fetchImages }) {
-  const [category, setCategory] = useState('all');
+  const [category, setCategory] = useState("all");
   const [page, setPage] = useState(1);
 
   useEffect(() => {
@@ -16,19 +17,16 @@ function App({ images, error, fetchImages }) {
   }, [fetchImages, category, page]);
 
   const handleNext = () => {
-    setPage(prevPage => prevPage + 1);
+    setPage((prevPage) => prevPage + 1);
   };
 
   const handlePrev = () => {
-    setPage(prevPage => Math.max(prevPage - 1, 1));
+    setPage((prevPage) => Math.max(prevPage - 1, 1));
   };
 
   const handleCategoryChange = (newCategory) => {
     setCategory(newCategory);
   };
-
-  
- 
 
   return (
     <div>
@@ -36,6 +34,7 @@ function App({ images, error, fetchImages }) {
       <PrevButton onClick={handlePrev} />
       <CategoryModal onChange={handleCategoryChange} />
       <NextButton onClick={handleNext} />
+      {error && <ErrorDisplay error={error} />}
       <ImageGrid images={images} />
     </div>
   );
