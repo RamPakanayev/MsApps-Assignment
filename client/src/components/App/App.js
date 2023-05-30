@@ -7,7 +7,7 @@ import NextButton from "../NextButton";
 import PrevButton from "../PrevButton";
 import CategoryModal from "../CategoryModal";
 import ErrorDisplay from "../ErrorDisplay";
-import "./App.css"; // Import the CSS file
+import "./App.css";
 
 function App({ images, error, fetchImages }) {
   const [category, setCategory] = useState("all");
@@ -43,11 +43,17 @@ function App({ images, error, fetchImages }) {
         <button onClick={handleCategoryButtonClick}>Change Category</button>
         <NextButton className="next-button" onClick={handleNext} />
       </div>
-      {isCategoryModalOpen && <CategoryModal onChange={handleCategoryChange} />}
+      {isCategoryModalOpen && (
+        <CategoryModal
+          isOpen={isCategoryModalOpen}
+          onChange={handleCategoryChange}
+          onClose={() => setIsCategoryModalOpen(false)}
+        />
+      )}
       {error && <ErrorDisplay error={error} />}
       <div className="image-grid-container">
-      <ImageGrid images={images} />
-    </div>
+        <ImageGrid images={images} />
+      </div>
     </div>
   );
 }

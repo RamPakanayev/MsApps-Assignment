@@ -9,10 +9,9 @@
 /*images size change*/
 .image-grid .image-modal {
   height: 280px;
-  width: 400px; 
+  width: 400px;
   position: relative;
 }
-
 
 .image-grid .image-modal .modal-content-wrapper {
   position: absolute;

@@ -1,10 +1,13 @@
 // client\src\components\CategoryModal.js
-import React, { useState } from "react";
 
-const CategoryModal = ({ onChange }) => {
+import React, { useState } from "react";
+import Modal from "react-modal";
+
+Modal.setAppElement("#root"); // This line is important for accessibility purposes
+
+const CategoryModal = ({ isOpen, onChange, onClose }) => {
   const categories = ["all", "animals", "sport", "work"];
   const [selectedCategory, setSelectedCategory] = useState("all");
-  
 
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
@@ -12,23 +15,11 @@ const CategoryModal = ({ onChange }) => {
 
   const handleSubmit = () => {
     onChange(selectedCategory);
+    onClose();
   };
 
   return (
-    /* for input:
-    <div>
-        <div>
-          <input
-            type="text"
-            value={selectedCategory}
-            onChange={handleCategoryChange}
-            placeholder="Enter category..."
-          />
-          <button onClick={handleSubmit}>OK</button>
-        </div>
-    </div>*/ 
-
-    <div>
+    <Modal isOpen={isOpen} onRequestClose={onClose}>
       <div>
         <select value={selectedCategory} onChange={handleCategoryChange}>
           {categories.map((category) => (
@@ -39,8 +30,21 @@ const CategoryModal = ({ onChange }) => {
         </select>
         <button onClick={handleSubmit}>OK</button>
       </div>
-    </div>
+    </Modal>
   );
 };
 
 export default CategoryModal;
+
+/* for input:
+    <div>
+        <div>
+          <input
+            type="text"
+            value={selectedCategory}
+            onChange={handleCategoryChange}
+            placeholder="Enter category..."
+          />
+          <button onClick={handleSubmit}>OK</button>
+        </div>
+    </div>*/

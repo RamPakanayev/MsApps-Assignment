@@ -37,7 +37,9 @@ export const fetchImages = (category, page) => {
           dispatch(fetchImagesSuccess(data));
         } else {
           dispatch(
-            fetchImagesFail(new Error("No images found for this category."))
+            fetchImagesFail(
+              new Error("No images found for this category or page number.")
+            )
           );
         }
       })
