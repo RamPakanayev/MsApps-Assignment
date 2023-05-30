@@ -1,5 +1,4 @@
-// client\src\redux\reducers\imagesReducer.js
-import { FETCH_IMAGES_START, FETCH_IMAGES_SUCCESS, FETCH_IMAGES_FAIL } from '../actions/types';
+import { FETCH_IMAGES_START, FETCH_IMAGES_SUCCESS, FETCH_IMAGES_FAIL } from "../actions/types";
 
 const initialState = {
   images: [],
@@ -7,28 +6,29 @@ const initialState = {
   error: null,
 };
 
-function imagesReducer(state = initialState, action) {
+export default function imageReducer(state = initialState, action) {
   switch (action.type) {
     case FETCH_IMAGES_START:
       return {
         ...state,
-        loading: true
+        loading: true,
+        error: null,
       };
     case FETCH_IMAGES_SUCCESS:
+      console.log('Images after success:', action.payload);  // Corrected this line
       return {
         ...state,
         loading: false,
-        images: action.payload
+        images: action.payload,  // Corrected this line
       };
     case FETCH_IMAGES_FAIL:
       return {
         ...state,
         loading: false,
-        error: action.payload
+        error: action.payload,
+        images: [], // Also update 'images' here
       };
     default:
       return state;
   }
 }
-
-export default imagesReducer;

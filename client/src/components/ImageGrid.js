@@ -1,25 +1,18 @@
 // client\src\components\ImageGrid.js
-import React from 'react';
-import { connect } from 'react-redux';
+import React from "react";
+// import { useSelector } from "react-redux";
+import ImageModal from "./ImageModal";
 
-function ImageGrid({ images }) {
+const ImageGrid = ({ images }) => {
+  console.log(images); // Add this line
   return (
-    <div style={{
-      display: 'grid',
-      gridTemplateColumns: 'repeat(3, 1fr)',
-      gridGap: '1rem',
-    }}>
-      {images.map(image => (
-        <div key={image.id}>
-          <img src={image.webformatURL} alt={image.tags} style={{ width: '100%' }} />
-        </div>
+    <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}>
+      {Array.isArray(images) && images.slice(0, 9).map((image) => (
+        <ImageModal key={image.id} image={image} />
       ))}
     </div>
   );
-}
+};
 
-const mapStateToProps = (state) => ({
-  images: state.images.images
-});
 
-export default connect(mapStateToProps)(ImageGrid);
+export default ImageGrid;
