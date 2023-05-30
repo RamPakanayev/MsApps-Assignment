@@ -5,7 +5,7 @@ import { fetchImages } from "../../redux/actions";
 import ImageGrid from "../ImageGrid/ImageGrid";
 import NextButton from "../NextButton";
 import PrevButton from "../PrevButton";
-import CategoryModal from "../CategoryModal";
+import CategoryModal from "../CategoryModal/CategoryModal";
 import ErrorDisplay from "../ErrorDisplay";
 import "./App.css";
 
