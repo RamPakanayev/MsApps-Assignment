@@ -1,10 +1,14 @@
 // client\src\components\ImageModal.js
+
 import React, { useState } from "react";
+import Modal from "react-modal";
 import "./ImageModal.css";
+
+Modal.setAppElement("#root");
 
 const ImageModal = ({ image }) => {
   const [isOpen, setIsOpen] = useState(false);
-  console.log(image);
+
   const handleOpen = () => {
     setIsOpen(true);
   };
@@ -16,8 +20,8 @@ const ImageModal = ({ image }) => {
   return (
     <div className="image-modal" onClick={handleOpen}>
       <div className={`modal-content-wrapper ${isOpen ? "open" : ""}`}>
-      <img src={image.webformatURL} alt="" />
-      
+        <img src={image.webformatURL} alt="" />
+
         {isOpen && (
           <div>
             <h2>Image Details</h2>
