@@ -11,5 +11,11 @@
 }
 
 .button-group button {
-  margin: 0 5%;  /* Adjust the value as needed */
+  margin: 0 5%; /* Adjust the value as needed */
+}
+.image-grid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }

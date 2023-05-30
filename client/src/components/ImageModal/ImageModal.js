@@ -19,9 +19,12 @@ const ImageModal = ({ image }) => {
   };
 
   return (
-    <div onClick={handleOpen}>
+    <div className="image-modal" onClick={handleOpen}>
       <img src={image.webformatURL} alt="" />
-      <Modal
+      <div className="overlay">
+        <p>Click for info</p>
+      </div>
+      <Modal 
         isOpen={isOpen}
         onRequestClose={handleClose}
         className="modal-content-wrapper"
@@ -36,6 +39,7 @@ const ImageModal = ({ image }) => {
       </Modal>
     </div>
   );
+  
 };
 
 export default ImageModal;

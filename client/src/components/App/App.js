@@ -45,7 +45,9 @@ function App({ images, error, fetchImages }) {
       </div>
       {isCategoryModalOpen && <CategoryModal onChange={handleCategoryChange} />}
       {error && <ErrorDisplay error={error} />}
+      <div className="image-grid-container">
       <ImageGrid images={images} />
+    </div>
     </div>
   );
 }
