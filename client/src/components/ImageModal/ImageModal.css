@@ -1,28 +1,26 @@
-.image-modal {
+.modal-container {
   cursor: pointer;
+  position: relative;
 }
 
-.image-modal img {
-  position: relative;
+.modal-container img {
   width: 100%;
-  /*height making the images in the same size */
-  height:100%;
+  height: 300px;/* Increase the height as per your requirement */
   object-fit: cover;
   transition: opacity 0.3s ease;
   border-radius: 10%;
 }
 
-.image-modal:hover img {
+.modal-container:hover img {
   opacity: 0.7;
-  
 }
 
-.image-modal .overlay {
+.modal-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 300px;/* Make sure this matches the height of your image */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,6 +31,37 @@
   border-radius: 10%;
 }
 
-.image-modal:hover .overlay {
+.modal-container:hover .modal-overlay {
   opacity: 1;
+}
+
+.modal-content-wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 2em;
+  box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  overflow: auto;
+}
+
+.modal-info {
+  flex: 1;
+  margin-right: 2em;
+  margin-left: 2em;
+}
+
+.modal-content-wrapper .modal-image {
+  flex: 1;
+  max-width: 100%;  /* Adjust the image width */
+  object-fit: contain;
+  margin: auto;  /* Center the image */
+  height: auto;  /* Adjust the image height */
 }
