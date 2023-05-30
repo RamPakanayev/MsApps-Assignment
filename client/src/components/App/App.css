@@ -1,0 +1,15 @@
+/* client\src\components\App.css */
+
+.app-container {
+  text-align: center;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2%;
+}
+
+.button-group button {
+  margin: 0 5%;  /* Adjust the value as needed */
+}

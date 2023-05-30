@@ -1,16 +1,18 @@
-// client\src\components\App.js
+//client\src\components\App\App.js
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { fetchImages } from "../redux/actions";
-import ImageGrid from "./ImageGrid";
-import NextButton from "./NextButton";
-import PrevButton from "./PrevButton";
-import CategoryModal from "./CategoryModal";
-import ErrorDisplay from "./ErrorDisplay";
+import { fetchImages } from "../../redux/actions";
+import ImageGrid from "../ImageGrid/ImageGrid";
+import NextButton from "../NextButton";
+import PrevButton from "../PrevButton";
+import CategoryModal from "../CategoryModal";
+import ErrorDisplay from "../ErrorDisplay";
+import "./App.css"; // Import the CSS file
 
 function App({ images, error, fetchImages }) {
   const [category, setCategory] = useState("all");
   const [page, setPage] = useState(1);
+  const [isCategoryModalOpen, setIsCategoryModalOpen] = useState(false);
 
   useEffect(() => {
     fetchImages(category, page);
@@ -26,14 +28,22 @@ function App({ images, error, fetchImages }) {
 
   const handleCategoryChange = (newCategory) => {
     setCategory(newCategory);
+    setIsCategoryModalOpen(false);
+  };
+
+  const handleCategoryButtonClick = () => {
+    setIsCategoryModalOpen(true);
   };
 
   return (
-    <div>
+    <div className="app-container">
       <h1>Pixabay Image Gallery</h1>
-      <PrevButton onClick={handlePrev} />
-      <CategoryModal onChange={handleCategoryChange} />
-      <NextButton onClick={handleNext} />
+      <div className="button-group">
+        <PrevButton className="prev-button" onClick={handlePrev} />
+        <button onClick={handleCategoryButtonClick}>Change Category</button>
+        <NextButton className="next-button" onClick={handleNext} />
+      </div>
+      {isCategoryModalOpen && <CategoryModal onChange={handleCategoryChange} />}
       {error && <ErrorDisplay error={error} />}
       <ImageGrid images={images} />
     </div>
