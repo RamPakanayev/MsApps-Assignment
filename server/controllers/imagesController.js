@@ -18,9 +18,23 @@ exports.getImages = async (req, res) => {
       },
     });
 
-    const sortedImages = sortImages(response.data.hits, sort);
-    res.json(sortedImages);
+    if (response.data.hits) {
+      const sortedImages = sortImages(response.data.hits, sort);
+      res.json(sortedImages);
+    } else {
+      throw new Error("Failed to fetch images from Pixabay");
+    }
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    console.error(err);
+    if (err.response) {
+      // The request was made and the server responded with a status code that falls out of the range of 2xx
+      res.status(500).json({ message: `Error: ${err.message}. Status: ${err.response.status}` });
+    } else if (err.request) {
+      // The request was made but no response was received
+      res.status(500).json({ message: `Error: ${err.message}. Request was made but no response was received` });
+    } else {
+      // Something happened in setting up the request that triggered an Error
+      res.status(500).json({ message: `Error: ${err.message}` });
+    }
   }
 };

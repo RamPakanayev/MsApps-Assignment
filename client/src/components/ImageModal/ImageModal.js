@@ -34,12 +34,14 @@ const ImageModal = ({ image }) => {
         }}
       >
         <div className="modal-info">
-          <h2>Image Details</h2>
+          <h2 ClassName="modal-info-title">Image Details</h2>
+          <div className="modal-info-info">
           <p>Views: {image.views}</p>
           <p>Downloads: {image.downloads}</p>
           <p>Likes: {image.likes}</p>
           <p>Tags: {image.tags}</p>
           <p>User: {image.user}</p>
+          </div>
           <button onClick={handleClose}>Close</button>
         </div>
         <img className="modal-image" src={image.webformatURL} alt="" />

@@ -5,7 +5,7 @@
 
 .modal-container img {
   width: 100%;
-  height: 300px;/* Increase the height as per your requirement */
+  height: 280px; /* Increase the height as per your requirement */
   object-fit: cover;
   transition: opacity 0.3s ease;
   border-radius: 10%;
@@ -20,7 +20,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 300px;/* Make sure this matches the height of your image */
+  height: 280px; /* Make sure this matches the height of your image */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,7 +45,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: white;
+  background: rgb(231, 246, 242, 0.8);
   padding: 2em;
   box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
@@ -54,14 +54,43 @@
 
 .modal-info {
   flex: 1;
-  margin-right: 2em;
-  margin-left: 2em;
+ margin-left: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  height: 100%;
+}
+
+.modal-info h2 {
+  text-align: center; /* Align the h2 tag to the center */
+  font-size: 50px;
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+.modal-info-info  {
+  margin-top:5%;
+  margin-left:40px; 
+  font-size: 20px; /* Adjust the font size as needed */
+  text-align: left; /* Align the text to the left */
+}
+.modal-info-info p {
+  margin-top:0%;
+  /* margin-left:40px;  */
+  font-size: 20px; /* Adjust the font size as needed */
+  text-align: left; /* Align the text to the left */
+}
+.modal-info button {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
 }
 
 .modal-content-wrapper .modal-image {
   flex: 1;
-  max-width: 100%;  /* Adjust the image width */
+  max-width: 100%; /* Adjust the image width */
   object-fit: contain;
-  margin: auto;  /* Center the image */
-  height: auto;  /* Adjust the image height */
+  margin: auto; /* Center the image */
+  height: auto; /* Adjust the image height */
 }
