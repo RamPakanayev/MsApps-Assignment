@@ -1,7 +1,12 @@
 // client\src\redux\reducers\index.js
-import { combineReducers } from 'redux';
-import imagesReducer from './imagesReducer';
 
+// Import necessary modules from Redux
+import { combineReducers } from "redux";
+
+// Import the imagesReducer to handle state changes related to images
+import imagesReducer from "./imagesReducer";
+
+// Use combineReducers to bundle the reducers into one. Here, 'images' state is managed by imagesReducer.
 export default combineReducers({
-  images: imagesReducer
+  images: imagesReducer,
 });

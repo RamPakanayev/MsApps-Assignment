@@ -1,35 +1,43 @@
-// client\src\components\CategoryModal.js
-import React, { useState } from "react";
-import Modal from "react-modal";
-import "./CategoryModal.css";
+// Import necessary libraries and components
+import React, { useState } from "react"; // Core React functionality and hooks
+import Modal from "react-modal"; // React-Modal for creating modals
+import "./CategoryModal.css"; // Styling for the CategoryModal component
 
-Modal.setAppElement("#root"); // This line is important for accessibility purposes
+Modal.setAppElement("#root"); // This line is important for accessibility purposes, it prevents screen readers from reading content outside of the Modal
 
+// CategoryModal component
 const CategoryModal = ({ isOpen, onChange, onClose }) => {
+
+  // List of categories to be displayed in the modal
   const categories = [
-    "all",
-    "animals",
-    "sport",
-    "work",
-    "astronomy",
-    "skyscraper",
+    "All",
+    "Animals",
+    "Sport",
+    "Work",
+    "Astronomy",
+    "Skyscraper",
   ];
+  
+  // State variable for the selected category
   const [selectedCategory, setSelectedCategory] = useState("all");
 
+  // Handler for category change event
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
   };
 
+  // Handler for the submit event
   const handleSubmit = () => {
-    onChange(selectedCategory);
-    onClose();
+    onChange(selectedCategory); 
+    onClose(); 
   };
 
+  // Render the CategoryModal component
   return (
     <Modal
       isOpen={isOpen}
       onRequestClose={onClose}
-      className="category-modal-main" // apply the class name here
+      className="category-modal-main" 
       style={{
         overlay: {
           backgroundColor: "rgba(0, 0, 0, 0.75)", // this will make the overlay darker
@@ -54,6 +62,7 @@ const CategoryModal = ({ isOpen, onChange, onClose }) => {
 export default CategoryModal;
 
 /* for input:
+    // This commented section can be used if we need to switch to an input field for selecting categories
     <div>
         <div>
           <input
