@@ -6,7 +6,14 @@ import "./CategoryModal.css";
 Modal.setAppElement("#root"); // This line is important for accessibility purposes
 
 const CategoryModal = ({ isOpen, onChange, onClose }) => {
-  const categories = ["all", "animals", "sport", "work"];
+  const categories = [
+    "all",
+    "animals",
+    "sport",
+    "work",
+    "astronomy",
+    "skyscraper",
+  ];
   const [selectedCategory, setSelectedCategory] = useState("all");
 
   const handleCategoryChange = (event) => {
@@ -25,7 +32,7 @@ const CategoryModal = ({ isOpen, onChange, onClose }) => {
       className="category-modal-main" // apply the class name here
       style={{
         overlay: {
-          backgroundColor: 'rgba(0, 0, 0, 0.75)', // this will make the overlay darker
+          backgroundColor: "rgba(0, 0, 0, 0.75)", // this will make the overlay darker
         },
       }}
     >

@@ -4,7 +4,7 @@
 }
 
 .modal-container img {
-  width: 100%;
+  width: 400px;
   height: 280px; /* Increase the height as per your requirement */
   object-fit: cover;
   transition: opacity 0.3s ease;
