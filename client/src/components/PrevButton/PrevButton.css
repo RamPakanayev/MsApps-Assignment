@@ -1,0 +1,28 @@
+.prev-button {
+  width: 150px;
+}
+
+.prev-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.prev-button span:after {
+  content: "\00ab"; /* for the left double arrow */
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -20px;
+  transition: 0.5s;
+}
+
+.prev-button:hover span {
+  padding-left: 25px;
+}
+
+.prev-button:hover span:after {
+  opacity: 1;
+  left: 0;
+}

@@ -1,5 +1,5 @@
-// client\src\components\NextButton.js
 import React from "react";
+import './NextButton.css';
 
 const NextButton = ({ onClick }) => (
   <button className="next-button" onClick={onClick} style={{verticalAlign: 'middle'}}>

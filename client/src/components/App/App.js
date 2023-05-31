@@ -4,14 +4,14 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { fetchImages } from "../../redux/actions";
 import ImageGrid from "../ImageGrid/ImageGrid";
-import NextButton from "../NextButton";
-import PrevButton from "../PrevButton";
+import NextButton from "../NextButton/NextButton";
+import PrevButton from "../PrevButton/PrevButton";
 import CategoryModal from "../CategoryModal/CategoryModal";
 import ErrorDisplay from "../ErrorDisplay";
 import "./App.css";
 
 function App({ images, error, fetchImages }) {
-  const [category, setCategory] = useState("all");
+  const [category, setCategory] = useState("All");
   const [page, setPage] = useState(1);
   const [isCategoryModalOpen, setIsCategoryModalOpen] = useState(false);
 
@@ -26,6 +26,7 @@ function App({ images, error, fetchImages }) {
   const handleCategoryChange = (newCategory) => {
     // Change the current category
     setCategory(newCategory);
+    setPage(1);
     setIsCategoryModalOpen(false);
   };
   const handleCategoryButtonClick = () => setIsCategoryModalOpen(true); // Open the category modal
@@ -34,15 +35,20 @@ function App({ images, error, fetchImages }) {
     <div className="app-container">
       <h1>Pixabay Image Gallery</h1>
       <div className="button-group">
-        <PrevButton className="prev-button" onClick={handlePrev} />
+        <PrevButton onClick={handlePrev} />
+        <p>{category}</p>
+
         <button
           className="change-category-button"
           onClick={handleCategoryButtonClick}
         >
           Change Category
         </button>
-        <NextButton className="next-button" onClick={handleNext} />
+
+        <p>Page {page}</p>
+        <NextButton onClick={handleNext} />
       </div>
+
       {isCategoryModalOpen && (
         <CategoryModal
           isOpen={isCategoryModalOpen}
@@ -62,6 +68,7 @@ function App({ images, error, fetchImages }) {
 const mapStateToProps = (state) => ({
   images: state.images.images,
   error: state.images.error,
+  loading: state.images.loading,
 });
 
 const mapDispatchToProps = { fetchImages }; // Map the fetchImages action creator to props

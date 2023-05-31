@@ -2,6 +2,7 @@
 
 .app-container {
   text-align: center;
+  font-family: "Helvetica", sans-serif;
 }
 .app-container h1 {
   color: rgb(35, 125, 125);
@@ -18,8 +19,14 @@
   margin-bottom: 2%;
 }
 
+.button-group p {
+  padding: auto;
+  font-size: 28px;
+  margin: auto;
+  color: rgb(57, 91, 100);
+}
 .button-group button {
-  margin: 0 5%; 
+  margin: 0 5%;
 }
 .image-grid-container {
   display: flex;
@@ -47,53 +54,5 @@ button:active {
 }
 
 .change-category-button {
-  width: 250px; 
-}
-.prev-button,
-.next-button {
-  width: 150px;
-}
-
-.prev-button span,
-.next-button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-
-.next-button span:after {
-  content: "\00bb"; /* for the right double arrow */
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  transition: 0.5s;
-}
-.prev-button span:after {
-  content: "\00ab"; /* for the left double arrow */
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  left: -20px;
-  transition: 0.5s;
-}
-
-.prev-button:hover span {
-  padding-left: 25px; 
-}
-
-.next-button:hover span {
-  padding-right: 25px;
-}
-.next-button:hover span {
-  padding-right: 25px;
-}
-.prev-button:hover span:after {
-  opacity: 1;
-  left: 0;
-}
-
-.next-button:hover span:after {
-  opacity: 1;
-  right: 0;
+  width: 250px;
 }
