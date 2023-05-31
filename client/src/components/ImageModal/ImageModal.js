@@ -27,6 +27,11 @@ const ImageModal = ({ image }) => {
         isOpen={isOpen}
         onRequestClose={handleClose}
         className="modal-content-wrapper"
+        style={{
+          overlay: {
+            backgroundColor: 'rgba(0, 0, 0, 0.75)', // this will make the overlay darker
+          },
+        }}
       >
         <div className="modal-info">
           <h2>Image Details</h2>
