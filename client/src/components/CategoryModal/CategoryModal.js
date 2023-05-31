@@ -1,14 +1,11 @@
-// Import necessary libraries and components
-import React, { useState } from "react"; // Core React functionality and hooks
-import Modal from "react-modal"; // React-Modal for creating modals
-import "./CategoryModal.css"; // Styling for the CategoryModal component
+import React, { useState } from "react";
+import Modal from "react-modal";
+import "./CategoryModal.css";
 
 Modal.setAppElement("#root"); // This line is important for accessibility purposes, it prevents screen readers from reading content outside of the Modal
 
 // CategoryModal component
 const CategoryModal = ({ isOpen, onChange, onClose }) => {
-
-  // List of categories to be displayed in the modal
   const categories = [
     "All",
     "Animals",
@@ -17,27 +14,23 @@ const CategoryModal = ({ isOpen, onChange, onClose }) => {
     "Astronomy",
     "Skyscraper",
   ];
-  
-  // State variable for the selected category
+
   const [selectedCategory, setSelectedCategory] = useState("all");
 
-  // Handler for category change event
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
   };
 
-  // Handler for the submit event
   const handleSubmit = () => {
-    onChange(selectedCategory); 
-    onClose(); 
+    onChange(selectedCategory);
+    onClose();
   };
 
-  // Render the CategoryModal component
   return (
     <Modal
       isOpen={isOpen}
       onRequestClose={onClose}
-      className="category-modal-main" 
+      className="category-modal-main"
       style={{
         overlay: {
           backgroundColor: "rgba(0, 0, 0, 0.75)", // this will make the overlay darker

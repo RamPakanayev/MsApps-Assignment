@@ -1,5 +1,3 @@
-// client\src\components\ImageGrid.js
-
 // Import necessary libraries and CSS styles
 import React from "react";
 import ImageModal from "../ImageModal/ImageModal";

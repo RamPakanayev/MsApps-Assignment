@@ -6,25 +6,20 @@ import "./ImageModal.css";
 // Set the root element for the Modal for accessibility purposes
 Modal.setAppElement("#root");
 
-// Define the ImageModal component. It receives an image as a prop.
+
 const ImageModal = ({ image }) => {
-  // Set up a state variable to control whether the modal is open
   const [isOpen, setIsOpen] = useState(false);
 
-  // Define the function to open the modal
   const handleOpen = () => {
     setIsOpen(true);
   };
 
-  // Define the function to close the modal. It stops the event propagation to prevent triggering the open function.
   const handleClose = (event) => {
     event.stopPropagation();
     setIsOpen(false);
   };
 
-  // Render the component
   return (
-    // The modal container. When clicked, it opens the modal.
     <div className="modal-container" onClick={handleOpen}>
       <img src={image.webformatURL} alt="" />
       <div className="modal-overlay">
@@ -41,7 +36,6 @@ const ImageModal = ({ image }) => {
           },
         }}
       >
-        {/* The container for the image details */}
         <div className="modal-info">
           <h2 ClassName="modal-info-title">Image Details</h2>
           <div className="modal-info-info">
@@ -59,5 +53,4 @@ const ImageModal = ({ image }) => {
   );
 };
 
-// Export the ImageModal component
 export default ImageModal;

@@ -1,6 +1,5 @@
 /*  client\src\components\ImageGrid.css */
 
-/* Defines the grid layout for the image display and sets margins */
 .image-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -10,14 +9,12 @@
   margin-right: 40px;
 }
 
-/* Sets the size and position of the modal that displays an image */
 .image-grid .image-modal {
   height: 280px;
   width: 400px;
   position: relative;
 }
 
-/* Sets the size and position of the content wrapper within the image modal */
 .image-grid .image-modal .modal-content-wrapper {
   position: absolute;
   width: 100%;

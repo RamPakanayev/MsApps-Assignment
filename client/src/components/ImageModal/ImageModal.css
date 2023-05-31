@@ -1,10 +1,8 @@
-/* Defines the position and hover effect of the container that holds the modal */
 .modal-container {
   cursor: pointer;
   position: relative;
 }
 
-/* Styles the image displayed in the modal container, including size, fit, transition, and border */
 .modal-container img {
   width: 400px;
   height: 280px; /* Increase the height as per your requirement */
@@ -13,12 +11,10 @@
   border-radius: 10%;
 }
 
-/* Defines the hover effect for the image in the modal container */
 .modal-container:hover img {
   opacity: 0.7;
 }
 
-/* Styles the overlay for the modal, including size, position, display, and color */
 .modal-overlay {
   position: absolute;
   top: 0;
@@ -35,12 +31,10 @@
   border-radius: 10%;
 }
 
-/* Defines the hover effect for the modal overlay */
 .modal-container:hover .modal-overlay {
   opacity: 1;
 }
 
-/* Styles the content wrapper for the modal, including position, size, display, padding, shadow, and overflow */
 .modal-content-wrapper {
   position: fixed;
   top: 50%;
@@ -58,7 +52,6 @@
   overflow: auto;
 }
 
-/* Styles the modal's info section, including flex layout and alignment */
 .modal-info {
   flex: 1;
   margin-left: 0px;
@@ -69,27 +62,23 @@
   height: 100%;
 }
 
-/* Styles the modal's heading and sets its size, alignment, and margin */
 .modal-info h2 {
   text-align: center;
   font-size: 50px;
   margin-bottom: 20px;
 }
 
-/* Styles the informational text inside the modal, including size, alignment, and margin */
-.modal-info-info  {
-  margin-top:5%;
-  margin-left:40px; 
+.modal-info-info {
+  margin-top: 5%;
+  margin-left: 40px;
   font-size: 20px;
   text-align: left;
 }
 .modal-info-info p {
-  margin-top:0%;
+  margin-top: 0%;
   font-size: 20px;
   text-align: left;
 }
-
-/* Styles the button in the modal's info section, including size, display, alignment, and margin */
 .modal-info button {
   margin-top: 15px;
   display: flex;
@@ -98,7 +87,6 @@
   width: 150px;
 }
 
-/* Styles the image displayed in the modal content wrapper, including size, fit, and alignment */
 .modal-content-wrapper .modal-image {
   flex: 1;
   max-width: 100%;

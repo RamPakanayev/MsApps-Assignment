@@ -1,4 +1,5 @@
-/* Defines overall appearance and positioning of the modal */
+/* CategoryModal.css */
+
 .category-modal-main {
   position: absolute;
   top: 50%;
@@ -13,7 +14,6 @@
   background: rgb(231, 246, 242, 0.8);
 }
 
-/* Creates a semi-transparent background behind the modal */
 .category-modal-main::after {
   content: "";
   position: fixed;
@@ -25,7 +25,6 @@
   z-index: -1;
 }
 
-/* Styles the content container of the modal */
 .category-modal-content {
   display: flex;
   justify-content: center;
@@ -33,7 +32,6 @@
   padding: 1em;
 }
 
-/* Styles the select dropdown within the modal */
 .category-modal-content select {
   margin-right: 1em;
   width: 500px;
@@ -41,7 +39,6 @@
   font-size: 20px;
 }
 
-/* Styles the confirmation button within the modal */
 .category-modal-content button {
   padding: 0.5em 1em;
   border: none;
@@ -56,14 +53,11 @@
   background-color: #4caf50;
   width: 150px;
 }
-
-/* Styles the title of the modal */
 .modal-title {
   text-align: center;
   margin-top: 5%;
 }
 
-/* Defines hover effect for the button within the modal */
 .category-modal-content button:hover {
   background-color: #45a049;
 }

@@ -1,38 +1,32 @@
 /* client\src\components\App.css */
 
-/* Styles for the main application container, including center alignment of its contents and specific styles for h1 elements within the container such as font details, color, text alignment and underline decoration. */
 .app-container {
   text-align: center;
 }
 .app-container h1 {
-  color:rgb(35, 125, 125);
+  color: rgb(35, 125, 125);
   font-size: 60px;
   font-family: "Rockwell", sans-serif;
+  letter-spacing: -1px;
   text-align: center;
   text-decoration: underline;
 }
 
-/* Styles for a group of buttons within the application. The buttons are arranged in a flexible layout and are evenly distributed within the group. */
 .button-group {
   display: flex;
   justify-content: space-between;
   margin-bottom: 2%;
 }
 
-/* Styles for individual buttons within the button group, including their margins. */
 .button-group button {
-  margin: 0 5%;
+  margin: 0 5%; 
 }
-
-/* Styles for a container that holds images within the application. This includes a flexible layout with center alignment of its contents both horizontally and vertically. */
 .image-grid-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
 }
-
-/* Common styles for all buttons in the application including their appearance, padding, font size, and interactivity effects. Also includes styles for hover and active states. */
 button {
   background-color: rgb(57, 91, 100);
   color: rgb(231, 246, 242);
@@ -44,6 +38,7 @@ button {
   text-align: center;
   font-family: "Helvetica", sans-serif;
 }
+
 button:hover {
   filter: brightness(150%);
 }
@@ -51,38 +46,44 @@ button:active {
   filter: brightness(70%);
 }
 
-/* Specific styles for the change-category-button, including its width. */
 .change-category-button {
-  width: 250px;
+  width: 250px; 
 }
-
-/* Specific styles for previous and next buttons, including their width and animations for an arrow indicator when hovering. */
-.prev-button, .next-button {
+.prev-button,
+.next-button {
   width: 150px;
 }
-.prev-button span, .next-button span {
+
+.prev-button span,
+.next-button span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
+
 .next-button span:after {
-  content: "\00bb";
+  content: "\00bb"; /* for the right double arrow */
   position: absolute;
   opacity: 0;
   top: 0;
   transition: 0.5s;
 }
 .prev-button span:after {
-  content: "\00ab";
+  content: "\00ab"; /* for the left double arrow */
   position: absolute;
   opacity: 0;
   top: 0;
   left: -20px;
   transition: 0.5s;
 }
+
 .prev-button:hover span {
-  padding-left: 25px;
+  padding-left: 25px; 
+}
+
+.next-button:hover span {
+  padding-right: 25px;
 }
 .next-button:hover span {
   padding-right: 25px;
@@ -91,6 +92,7 @@ button:active {
   opacity: 1;
   left: 0;
 }
+
 .next-button:hover span:after {
   opacity: 1;
   right: 0;
