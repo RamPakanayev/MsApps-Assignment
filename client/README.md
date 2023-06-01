@@ -22,7 +22,7 @@ To install the Pixabay Image Gallery client, follow these steps:
 git clone https://github.com/RamPakanayev/MsApps-Assignment
 
 # Navigate into the repository
-cd repository
+cd client
 
 # Install dependencies
 npm install
