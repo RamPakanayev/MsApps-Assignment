@@ -20,4 +20,4 @@ Detailed documentation on how to setup, run, and use the server side can be foun
 
 Ram Pakanayev
 
-![Project Image](images/example.png)
+![Image description](./client/public/Pixabay-Image-Gallery.png)
