@@ -13,7 +13,7 @@ This is the server-side for the Pixabay Image Gallery. It sets up a Node.js serv
 7. [Dependencies](#dependencies)
 8. [Scripts](#scripts)
 9. [Author](#author)
-10. [License](#license)
+
 
 ## Installation
 
