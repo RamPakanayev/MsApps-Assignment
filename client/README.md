@@ -19,7 +19,7 @@ To install the Pixabay Image Gallery client, follow these steps:
 
 ```bash
 # Clone the repository
-git clone https://github.com/username/repository.git
+git clone https://github.com/RamPakanayev/MsApps-Assignment
 
 # Navigate into the repository
 cd repository
