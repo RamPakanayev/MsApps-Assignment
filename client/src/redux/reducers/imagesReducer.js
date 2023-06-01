@@ -1,4 +1,3 @@
-// Import the action types for the image fetching process
 import {
   FETCH_IMAGES_START,
   FETCH_IMAGES_SUCCESS,

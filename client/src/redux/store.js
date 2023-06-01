@@ -1,4 +1,3 @@
-// Import necessary modules from Redux and redux-thunk middleware
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 

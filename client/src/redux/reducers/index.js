@@ -1,6 +1,3 @@
-// client\src\redux\reducers\index.js
-
-// Import necessary modules from Redux
 import { combineReducers } from "redux";
 
 // Import the imagesReducer to handle state changes related to images

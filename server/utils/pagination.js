@@ -1,4 +1,4 @@
-// server/utils/pagination.js
+// Define a function that extracts pagination parameters from a query object
 exports.getPaginationParams = (query) => {
   const { page, per_page } = query;
   return {

@@ -1,5 +1,3 @@
-//client\src\components\App\App.js
-
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { fetchImages } from "../../redux/actions";
