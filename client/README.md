@@ -10,8 +10,7 @@ The client-side is a React application that makes API calls to a server to fetch
 2. [Usage](#usage)
 3. [Features](#features)
 4. [Dependencies](#dependencies)
-5. [Contributing](#contributing)
-6. [License](#license)
+6. [Author](#Author)
 
 ## Installation
 
